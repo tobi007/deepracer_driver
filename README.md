@@ -1,6 +1,6 @@
 # Project Title
 
-One Paragraph of project description goes here
+This is a ros two package to drive the deepracer simualtion gazebo model autonomously for the medium track using OpenCV and deeplearing
 
 ## Getting Started
 
