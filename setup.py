@@ -6,7 +6,7 @@ except ImportError:
     from distutils.core import setup, find_packages
 
 REQUIRES_PYTHON = '>=3.5.0'
-package_name = 'deepracer_runner'
+package_name = 'deepracer_driver'
 
 setup(
     name=package_name,
@@ -22,7 +22,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'cv_runner=nodes.cv_runner:main',
+            'driver=nodes.driver:main',
             'hsv_finder=nodes.hsv_finder:main'
         ],
     },

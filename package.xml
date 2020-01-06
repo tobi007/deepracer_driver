@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
 <package format="3">
-  <name>deepracer_runner</name>
+  <name>deepracer_driver</name>
   <version>0.0.0</version>
   <description>TODO: Package description</description>
-  <maintainer email="tobi-k@todo.todo">tobi-k</maintainer>
+  <maintainer email="ekayode700@gmail.com">tobi-k</maintainer>
   <license>TODO: License declaration</license>
 
   <buildtool_depend>ament_python</buildtool_depend>
 
   <depend>rclpy</depend>
-  
+
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
   <test_depend>ament_pep257</test_depend>

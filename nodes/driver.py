@@ -17,7 +17,7 @@ from keras.models import load_model
 
 import argparse
 
-class CVRunner(Node):
+class Driver(Node):
     def __init__(self, params):
         super().__init__('cv_runner')
         self.subscription = self.create_subscription(
@@ -397,9 +397,9 @@ def main():
         "runner_dir": args.runner_dir,
     }
 
-    runner = CVRunner(config)
+    driver = Driver(config)
 
-    rclpy.spin(runner)
+    rclpy.spin(driver)
 
     # Destroy the node explicitly
     # (optional - otherwise it will be done automatically
