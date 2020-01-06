@@ -24,6 +24,8 @@ sklearn etc
   * Open a terminal and source your ros2 worksapce
   * Type ```ros2 run deepracer_runner cv_runner``` to start the node
   * Type ```ros2 run deepracer_runner cv_runner --help``` to check the optional arguments to the node
+  
+  [![Demo Of the simualtion ruuning on youtube](https://drive.google.com/file/d/1qPBWKu4LKlq_G-8hIpMf_aB_I4yi1O5Z/view?usp=sharing)](https://www.youtube.com/watch?v=7tyUCWxltQM)
 
 ## Built With
 
