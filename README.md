@@ -1,88 +1,46 @@
 # Project Title
 
-This is a ros2 package to drive the deepracer simualtion gazebo model autonomously for the medium track using OpenCV and deeplearing
+This is a ros2 package to drive the AWS deepracer simualtion gazebo model autonomously for the medium track using OpenCV and deeplearing
 
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
+  * aws-robomaker-sample-application-deepracer (https://github.com/aws-robotics/aws-robomaker-sample-application-deepracer/tree/ros2)
+  * Knowledge of ROS2
+  * Install OpenCV
+  * To use deep learning keras and tensorflow must be install along with their depencies e.g numpy, 
+sklearn etc
 
-```
-Give examples
-```
+## Getting Started
 
-### Installing
+ * Clone the package to your ros2 workspace
+ * Build the package (```colcon build --symlink-install --packages-select deepracer_runner```)
+ * Source the worksapce (```sourec install/local_setup.bash```)
 
-A step by step series of examples that tell you how to get a development env running
 
-Say what the step will be
+### Running
 
-```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+  * Start the Gazebo deepracer simualtion using the racecar_medium_track world. On my box I use ```ros2 launch deepracer_simulation racetrack_with_racecar.launch.py gui:=true world:=src/deepracer_simulation/worlds/racecar_medium_track.world```
+  * Open a terminal and source your ros2 worksapce
+  * Type ```ros2 run deepracer_runner cv_runner``` to start the node
+  * Type ```ros2 run deepracer_runner cv_runner --help``` to check the optional arguments to the node
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+* [ROS](https://github.com/ros2/ros2) - Robot Operating System
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Kayode Emmnauel O.** - (https://github.com/tobi007)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Thanks to **David Tian** for the post on DeepPiCar — Part 1: How to Build a Deep Learning, Self Driving Robotic Car on a Shoestring Budget (https://towardsdatascience.com/deeppicar-part-1-102e03c83f2c). Most of the code were form the post with and some few modeifications to suit ROS2.
+* **Billie Thompson** - README template used - [PurpleBooth](https://github.com/PurpleBooth)
+
 
