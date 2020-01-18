@@ -27,7 +27,7 @@ class Driver(Node):
             10)
         self.bridge = CvBridge()
         self.curr_steering_angle = 0
-        self.curr_throttle_spd = 0.01
+        
         self.publisher_ = self.create_publisher(Twist, '/racer_car/cmd_vel', 1)
         timer_period = 0.5  # seconds
         self.timer = self.create_timer(timer_period, self.compute_cmd_vel)
@@ -36,6 +36,9 @@ class Driver(Node):
         self.runner_dir = params['runner_dir']
         self.use_open_cv = params['use_opvencv']
         if self.use_open_cv:
+            self.curr_throttle_spd = 0.5
+        else:
+            self.model = load_model('%s/note-book/lane_navigation_check_87.17.h5' % self.runner_dir)
             self.curr_throttle_spd = 0.5
     
     def compute_cmd_vel(self):
@@ -70,10 +73,10 @@ class Driver(Node):
         if self.use_open_cv:
             steering_angle, side_line_num = self.use_opencv_to_get_steering(cv_image)
         else:
-            model = load_model('%s/note-book/lane_navigation_check_87.17.h5' % self.runner_dir)
+            
             image = img_preprocess(cv_image)
             
-            steering_angle = int(model.predict(np.asarray([image])))  
+            steering_angle = int(self.model.predict(np.asarray([image])))  
             side_line_num = 1
             print("Predicted Steer Angle: %03d" % (steering_angle))     
         
