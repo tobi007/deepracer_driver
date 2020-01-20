@@ -14,7 +14,7 @@ sklearn etc
 ## Getting Started
 
  * Clone the package to your ros2 workspace
- * Build the package (```colcon build --symlink-install --packages-select deepracer_runner```)
+ * Build the package (```colcon build --symlink-install --packages-select deepracer_driver```)
  * Source the worksapce (```sourec install/local_setup.bash```)
 
 
@@ -22,8 +22,8 @@ sklearn etc
 
   * Start the Gazebo deepracer simualtion using the racecar_medium_track world. On my box I use ```ros2 launch deepracer_simulation racetrack_with_racecar.launch.py gui:=true world:=src/deepracer_simulation/worlds/racecar_medium_track.world```
   * Open a terminal and source your ros2 worksapce
-  * Type ```ros2 run deepracer_runner cv_runner``` to start the node
-  * Type ```ros2 run deepracer_runner cv_runner --help``` to check the optional arguments to the node
+  * Type ```ros2 run deepracer_driver driver``` to start the node, it will use opencv by default
+  * Type ```ros2 run deepracer_driver driver --help``` to check the optional arguments to the node, and how to run using deeplearning
   
   [![Demo Of the simualtion ruuning on youtube](https://drive.google.com/file/d/1qPBWKu4LKlq_G-8hIpMf_aB_I4yi1O5Z/view?usp=sharing)](https://www.youtube.com/watch?v=7tyUCWxltQM)
 
